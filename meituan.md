@@ -1,3 +1,4 @@
+## 美团
 + ES6知道哪些新语法
     - let/const
     - 模板字符串
@@ -14,9 +15,33 @@
 + webpack、gulp各自的优缺点
 
 + 继承的实现方式
-    - 拷贝继承
+    - 给原型添加方法
+    ```js
+    F.prototype.say=function(){}
+    ```
+    - 修改构造函数的原型对象
+    ```js
+    F.prototype={ 
+        constructor:F,
+        say:function(){} 
+    }
+    ```
+    - 拷贝继承：将一个对象中的属性拷贝到另一个对象中
+
     - 借用构造函数
-    - 
+    ```js
+    function Parent(a,b,c){
+        this.a=a;
+        this.b=b;
+        this.c=c;
+    }
+    function Child(a,b,c,d,e){
+        Parant.call(this,a,b,c);
+        this.d=d;
+        thid.e=e;
+    }
+    ```
+    - 经典继承：Object.create
 
 + 如何实现让一个元素垂直+水平居中
 
